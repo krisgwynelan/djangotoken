@@ -9,8 +9,7 @@ router = DefaultRouter()
 router.register(r'tasks', TaskViewSet)
 
 urlpatterns = [
-    path('api/', include(router.urls)),
-    path('secure-hello/', SecureHelloView.as_view(), name='secure-hello'),
-    path('api-token-auth/', obtain_auth_token),
- 
+    path('api/', include(router.urls)),  # Your task-related endpoints
+    path('secure-hello/', SecureHelloView.as_view(), name='secure-hello'),  # Your authenticated endpoint
+    path('api-token-auth/', obtain_auth_token),  # Endpoint for obtaining tokens
 ]
